@@ -1,0 +1,38 @@
+# 부서 코드를 1개만 주는 요청
+GET /department-members?departmentIds=L1001
+Host: localhost:8080
+Accept: application/json
+
+###
+
+# 부서 코드를 1개 이상 주는 요청
+GET /department-members?departmentIds=L1001,L1002
+Host: localhost:8080
+Accept: application/json
+
+###
+
+# 부서 코드를 순서가 정렬이 안 된 요청
+GET /department-members?departmentIds=L1001,L1003,L1002
+Host: localhost:8080
+Accept: application/json
+
+###
+
+# Aceept 헤더가 올바르지 않은 경우
+GET /department-members?departmentIds=L1001,L1002
+Host: localhost:8080
+Accept: application/xml
+
+###
+
+# Accept 헤더가 존재하지 않는 경우
+GET /department-members?departmentIds=L1001,L1002
+Host: localhost:8080
+
+###
+
+GET /department-members
+Host: localhost:8080
+Accept: application/json
+
